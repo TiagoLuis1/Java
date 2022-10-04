@@ -107,5 +107,7 @@ pagina2.html
 </form>
 
 </ul>
-
+-------------------------------------------------------------------------------------------------------
 entrar vercel.com
+control/c volta para escrever
+S/N marcar com S
