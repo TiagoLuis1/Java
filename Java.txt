@@ -1,0 +1,261 @@
+npm run dev-mostrar site na web
+--------------------------------------------------------------------------------------------------
+var a 
+
+var b
+
+function soma(a,b) {return a+b}
+
+soma(2,2)
+4
+
+
+alert(soma(2,2));
+
+<img scr<"nome da foto">
+--------------------------------------------------------------------------------------------------
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+
+</head>
+
+<body>
+
+<h1>
+    Cabeçalho nível 1
+</h1>
+<p>
+    Esse é um parágrafo
+</p>
+<h2>Cabeçalho nível 2</h2>   
+<h3>Cabeçalho nível 3</h3>    
+<h4>Cabeçalho nível 4</h4>
+<h5>Cabeçalho nível 5</h5>
+<h6>Cabeçalho nível 6</h6> 
+<hr>
+ 
+<p>
+    Esse é um parágrafo
+</p>
+
+<p>
+    Esse é um parágrafo <br>
+    Aqui pulamos linha
+    <hr>
+    <h2>Cabeçalho nível 2 dentro dp parágrafo</h2>
+    <p>
+        Esse é um parágrafo
+    </p>
+    
+</p>
+<hr>
+<h3>Hiperlink</h3>
+
+<p> <a href="pagina2.html">Ir para a página 2</a></p>
+
+
+
+</body>
+
+</html>
+--------------------------------------------------------------------------------------------------
+pagina2.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste 2</title>
+</head>
+<body>
+    
+</body>
+</html>
+<h1>pagina 2</h1>
+
+<hr>
+<p> <a href="index.html">Voltar</a></p>
+<hr>
+
+<ul>
+
+<li><a href="http://www.Google.com.br"target="_blank">Google</a></li>
+<li><a href="http://www.UOL.com.br"target="_blank">Uol</a></li>
+<li><a href="http://www.sp.senac.com.br"target="_blank">Senac</a></li>
+<li><a href="http://www.youtube.com"target="_blank">Youtube</a></li><br>
+<HR>
+
+<form>
+<label>Nome:</label>    
+<input><br><br>
+<label>Email:</label>
+<input><br><br>
+<button>ENVIAR</button>
+
+
+</form>
+
+</ul>
+--------------------------------------------------------------------------------------------------
+import Link from 'next/link'
+
+export default function Home() {
+return (
+    <>
+    <h1>MENU</h1>
+<hr/>
+<Link href="./pagina2"><a>Ir para a pagina 2</a></Link>
+</>
+  )
+}
+--------------------------------------------------------------------------------------------------
+pagina 2
+import header from './header'
+import footer from  './footer'
+
+
+function pagina2(){
+ return(
+<>
+<header />
+<Link href="./pagina3"><a>Ir para a pagina 3</a></Link>
+<hr/>
+
+
+<footer />
+</>
+ )
+}
+export default pagina2;
+--------------------------------------------------------------------------------------------------
+pagina 3
+import header from './header'
+import footer from  './footer'
+
+
+function pagina3(){
+ return(
+<>
+<header />
+<h1>estamos na pagina 3</h1>
+<hr/>
+
+
+<footer />
+</>
+ )
+}
+export default pagina3;
+--------------------------------------------------------------------------------------------------
+code pen códigos
+
+HTML
+<container>
+  <header> </header>
+  <main> </main>
+  <aside> </aside>
+  <footer> </footer>
+</container>
+--------------------------------------------------------------------------------------------------
+Página-CSS:
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+container{
+  display: grid;
+  grid-template:"a a a a"
+                "b c c c"        
+                "d d d d";
+  
+  widht : 100vw;
+  height : 100vh;
+  grid-gap : 5px;
+  background-color : yellow;
+}
+
+header{
+  display: grid;
+  height: 10vh;
+  grid-area: a;
+  background-color : gray;
+}
+
+main{
+  display: grid;
+  grid-gap:  b;
+  height: 65vh;
+  background-color: blue;
+}
+
+aside{
+  display: grid;
+  grid-area: c;
+  height: 65vh;
+  background-color: red;
+}
+
+footer{
+  display: grid;
+  grid-area: d;
+  height: 15vh;
+  background-color: #1A237E;
+  
+}
+--------------------------------------------------------------------------------------------------
+Footer exemplo:
+
+index.js
+import styles from './styles.module.css'
+
+function footer (){
+
+    return(
+        <p className={styles.footer}>BAIXO</p>
+    )
+}
+
+export default footer
+
+--------------------------------------------------------------------------------------------------
+style.css exemplo
+.footer {
+    width: 100%;
+    font-size: xx-large;
+    background-color: chartreuse;
+}
+--------------------------------------------------------------------------------------------------
+exemplo pages.index.js
+import Header from '../components/Header'
+import Container from '../components/container'
+import Footer from '../components/Footer'
+
+
+export default function Home() {
+    return(
+      <>
+      <Header/>
+      <Container/>
+      <Footer/>
+
+      
+      </>
+        
+    )
+}
+
+
+
